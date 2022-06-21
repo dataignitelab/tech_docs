@@ -2,7 +2,7 @@
 
 ## AIoT 분야 기술 목차   
 
-* IoT 개요   
+* [IoT 개요](https://github.com/dataignitelab/cloud_docs/blob/main/AIoT/01.IoT_개요)    
 * [제조공정별 분석](https://github.com/dataignitelab/cloud_docs/blob/main/Manufacturing_Process/)
 
 
