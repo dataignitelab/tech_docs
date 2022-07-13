@@ -19,13 +19,12 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수(y=WX+b) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( f(a+b) = f(a) + f(b) )이기 때문에 비선형적인 문제를 해결할 수 없다. 
 
+![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
+
 그에 대한 해결책이 바로 활성화 함수이다. 선형적인 ANN 레이어에 비선형성을 추가하는 것이다. 
-
-![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
-
 활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다.
 
-![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
+![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
 
 ### 활성화 함수 종류
 
@@ -120,11 +119,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 - **Softmax**
     - 수식
-        
-        $$
-        y_k = { e^{a_k} \over {\sum_{i=1}^{n} {e^{a_i}}} }  
-        $$
-        
+        ![softmax](https://blog.kakaocdn.net/dn/7o3ns/btqvQDIyhq4/FYgVfbO6NaJrkc7y11f440/img.png)
         - k = 계산하고자하는 클래스, n = 전체 클래스 수
         - 단순하게 “k일 확률 / 전체 확률”
     - 데이터의 합이 1인 확률 분포로 변환해주는 활성화 함수이다.
