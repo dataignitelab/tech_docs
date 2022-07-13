@@ -19,7 +19,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수(y=WX+b) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( f(a+b) = f(a) + f(b) )이기 때문에 비선형적인 문제를 해결할 수 없다. 
 
-따라서 비선형성을 위하여 별도의 추가적인 방법이 필요하게 되었는데 그게 바로 활성화 함수이다. 
+그에 대한 해결책이 바로 활성화 함수이다. 선형적인 ANN 레이어에 비선형성을 추가하는 것이다. 
 
 활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다.
 
@@ -111,12 +111,12 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 - **Maxout**
     - 활성화 함수를 구간 선형 함수(piecewise linear function)이라 가정하고, 뉴런 별 최적의 활성화 함수를 학습을 통하여 찾아내는 활성화 함수이다.
 
-    ![Maxout](/images/Machine_Learning/activation_function/11.png) 
+    ![Maxout](/images/Machine_Learning/activation_function/12.png) 
  
+    ![Maxout](/images/Machine_Learning/activation_function/11.png) 
+
     - 뉴런 별로 여러개의 선형 함수를 학습 시키도 최종적으로 최댓값들을 취하는 방식이다. 아래 그래프로는 빨간선이 되겠다.
     - Maxout 도 결국 학습해야하므로 연산 파라미터가 증가하기 때문에 얼마만큼 활용할 것인가는 고민해봐야할 포인트며, Maxout 을 적용하면 신경망의 깊이를 줄일 수 있다는 장점 때문에 Maxout 에 의한 파라미터 증가를 어느정도 상쇄할 수 있다.
-
-    ![Maxout](/images/Machine_Learning/activation_function/12.png) 
 
 - **Softmax**
     - 수식
