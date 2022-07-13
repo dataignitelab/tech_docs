@@ -10,12 +10,12 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 그래프로 표현하면 직선의 형태를 띔
     - y = wx+b
 
-![스크린샷 2022-07-13 오후 1.00.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc6fd74d-c926-4670-a177-e2c3e2a2e3f2/스크린샷_2022-07-13_오후_1.00.39.png)
+![선형 그래프](/images/Machine_Learning/activation_function/0.png)
 
 - 비선형성(Non-Linearity) : x 와 y 의 관계가 비례 하지 않는 성질
     - 그래프로 표현하면 곡선의 형태를 띔
 
-![스크린샷 2022-07-13 오후 1.01.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a3bba5a-ff27-4d2d-b6eb-124184953b58/스크린샷_2022-07-13_오후_1.01.04.png)
+![비선형 그래프](/images/Machine_Learning/activation_function/1.png)
 
 실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수(y=WX+b) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( f(a+b) = f(a) + f(b) )이기 때문에 비선형적인 문제를 해결할 수 없다. 
 
@@ -23,7 +23,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다.
 
-![스크린샷 2022-07-13 오전 9.52.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b4b437f-097e-4428-8f87-9c4f92cc6894/스크린샷_2022-07-13_오전_9.52.19.png)
+![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
 
 ### 활성화 함수 종류
 
@@ -31,17 +31,11 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 0 또는 1만 출력 하는 활성화 함수로 최초의 활성화 함수이다.
     - 너무 단순해서 간단한 문제 외에는 적용하기 어려우며, 미분을 이용한 딥러닝 학습에 적용할 수 없다.
 
-![스크린샷 2022-07-13 오후 12.20.14.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9a15150-0596-4b34-bf0c-808cbba5bdd6/스크린샷_2022-07-13_오후_12.20.14.png)
-
-![스크린샷 2022-07-13 오후 5.10.01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a857c03b-c3d2-4e0c-8ac7-f5d4b35ff4c1/스크린샷_2022-07-13_오후_5.10.01.png)
-
-![스크린샷 2022-07-13 오후 5.10.12.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a30f527-6eea-4642-bb64-048497ce75cd/스크린샷_2022-07-13_오후_5.10.12.png)
+![step](/images/Machine_Learning/activation_function/3.png)
 
 - **Sigmoid**
-    
-    ![스크린샷 2022-07-13 오후 5.08.05.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/618bfb0d-3573-44d0-9f35-ab8f8e235a94/스크린샷_2022-07-13_오후_5.08.05.png)
-    
     - 0-1 사이로 만들어주는 딥러닝에서의 전통적인 활성화 함수로 데이터 평균을 0.5로 만들어준다. Nomailzation 역할을 수행한다고 보면 되겠다.
+    ![Sigmoid](/images/Machine_Learning/activation_function/3.png)
     - **통계적 관점에서 Sigmoid**
         - Sigmoid 는 단순 0-1 사이의 숫자가 아니라 확률 값이다.
         - logistics 와 그리고 odds 와 probability 개념 이해
@@ -58,19 +52,18 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 그래프를 보면 알겠지만 0과 1로 데이터의 차이를 크게 만들어주는 역할을 수행하기 때문에 Binrary Classfication 문제에서 모델의 마지막 출력에만 적용되는 함수로 많이 활용된다.
 
 - **tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
-    
-    ![스크린샷 2022-07-13 오후 5.09.54.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b5b1de7-ffa7-4cef-a4c8-58775a1d0be6/스크린샷_2022-07-13_오후_5.09.54.png)
-    
     - Sigmoid와 거의 같으며 -1 ~ +1 사이로 만들어주는 활성화 함수로 데이터 평균을 0으로 만들어 준다.
+    ![tanh](/images/Machine_Learning/activation_function/4.png)
     - RNN 모델에서 주로 활용되는 함수이다. 이전 과거의 데이터를 현재 데이터에 반영해야 하므로 순환 연산을 수행하다보면 같은 값을 계속 곱하게 되는데,  0 ~ 1 사이의 값(sigmoid)이라면 기울기가 소실될 것이며, 1 보다 크다면 (ReLU) 기울기가 발산하게 되므로 적합하지 않다.
         - 그래서 적당한 타협점을 찾은 것이 tanh 이다.
         - Sigmoid 의 미분 최대값이 0.25이고, tanh 는 1이다. tanh 가 기울기가 소실될 가능성이 더 적다.
         - 이에 연장선상에서 모델의 레이어를 깊게 쌓지 않는다면 sigmoid 또는 tanh 가 이후 후술할 ReLU 보다 좋은 성능을 낼 수 있다는 이야기도 된다.
 
-![스크린샷 2022-07-13 오후 4.17.45.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c6c5e70-e59d-48d9-b9fa-82f8158c8965/스크린샷_2022-07-13_오후_4.17.45.png)
+    ![활성화함수에 따른 성능 차이 예시](/images/Machine_Learning/activation_function/5.png) 
 
 - **ReLU (Retified Linear Unit)**
     - 음수는 0, 양수는 양수 그대로 출력하는 함수
+    ![ReLU](/images/Machine_Learning/activation_function/6.png) 
     - 초창기 ANN에서는 값의 Normalization 과 비선형성을 중시하여 Sigmoid 함수와 같은 것을 활용한 연구가 진행되다보니 Vanishing Gradient 문제를 해결하지 못하여 연구가 진행되지 못했다.
     - ReLu 자체는 이미 오래전에 등장한 개념이었지만 실제 ANN에 적용하는 것은 그로부터 한참 뒤에 진행되었다. 선형 함수라고도 할수 있는 간단한 구조로 Vanising Gradient Problem을 해결하면서 적은 연산으로 깊은 레이어를 쌓으면서 안정적인 학습이 가능해짐에 따라 딥러닝이 발전하는 핵심적인 역할한 활성화 함수이다.
     - 여기서 입력값이 음수가 된다는 것은 Relu에 의해 값이 0 된다는 것인데, 이 때 해당 값이 필요 없다는 의미보다 딥러닝 모델의 필요에 의해서 해당 값들은 0의 방향으로 학습한다는 관점 봐야한다.
@@ -80,48 +73,42 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
             - 현재의 딥러닝 기술이 지금처럼 발전할 수 있도록 다양한 핵심 개념들(ReLU, Dropout, Auggmentation, Pooling, Nomailzation)을 정립하였다.
             
 - **ELU (Exponential Linear Unit)**
-    
-    ![스크린샷 2022-07-13 오후 5.10.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5ddcc668-ac64-47cd-bbf0-4296de27fd44/스크린샷_2022-07-13_오후_5.10.26.png)
-    
+    - 음수일때 비선형적인 형태를 띔
+    ![ELU](/images/Machine_Learning/activation_function/7.png) 
     - ReLU에서의 0 발생 시 학습이 되지 않는 Dying ReLU 문제가 발생하는 것을 해결하고자 나온 것으로 어느정도의 음수는 활용하자가 기본 개념이다. 이후 설명될 ReLU 의 모든 변형 함수들의 목적이다.
         - ReLu는 음수를 활용하지 않기 때문에 모델의 기울기 최저점에서 수렴하지 못하고 Loss가 요동치는 문제가 있는데, 음수를 활용하면 모델 수렴이 보다 잘 될 가능성이 있다.
-    - 음수일때 비선형적인 형태를 띔
     
 - **Leaky** **Relu**
     - 음수에는 0.01 을 곱하여 사용, 양수는 그대로 출력하는 함수
+    ![Leaky Relu](/images/Machine_Learning/activation_function/8.png) 
     - ELU와 개발목적은 같다.
     - 다만, Relu의 미분 연산에서는 계산할것이 따로 없는데, Leaky Relu는 연산량이 늘어나면서 학습 시간이 더 많이 소요된다.
     
 - **Swish**
     - ReLu 의 변형으로 작은 음수의 입력은 활용하는 함수이다.
     - f(x) = x * sigmoid(x)
+    ![Swish](/images/Machine_Learning/activation_function/9.png) 
 
-![스크린샷 2022-07-13 오전 11.38.51.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/626235ef-19d4-4371-aa49-38c3c516377e/스크린샷_2022-07-13_오전_11.38.51.png)
-
-- **exp (Exponential)**
+- **EXP (Exponential)**
     - 자연로그의 지수함수이다. 활성화 함수의 범주에 넣기에는 애매한 측면이 있으나 빈도는 높지 않지만 주요 포인트들에서 활용되고 있으니 적어본다.
     - 데이터 아주 작은 차이도 명확하게 구별 될 수 있는 큰 차이로 만들어주는 것이 특징이다.
     - 회귀분석에서 모델 출력 값이 양수의 큰값이어야 할 때 활용될 수 있을 것으로 판단된다.
         - Yolo 같은 모델에서 오브젝트의 w,h 를 찾는데 활용된다.
-
-![스크린샷 2022-07-13 오전 11.19.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/291ee50c-a79f-4216-994c-b013f8255836/스크린샷_2022-07-13_오전_11.19.03.png)
+    ![EXP](/images/Machine_Learning/activation_function/10.png) 
 
 - **Maxout**
-    
-    ![스크린샷 2022-07-13 오후 5.10.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c4fa7b92-cd81-4b75-a3c6-e8689a59fb94/스크린샷_2022-07-13_오후_5.10.19.png)
-    
     - 활성화 함수를 구간 선형 함수(piecewise linear function)이라 가정하고, 뉴런 별 최적의 활성화 함수를 학습을 통하여 찾아내는 활성화 함수이다.
+    ![Maxout](/images/Machine_Learning/activation_function/11.png) 
     - 뉴런 별로 여러개의 선형 함수를 학습 시키도 최종적으로 최댓값들을 취하는 방식이다. 아래 그래프로는 빨간선이 되겠다.
     - Maxout 도 결국 학습해야하므로 연산 파라미터가 증가하기 때문에 얼마만큼 활용할 것인가는 고민해봐야할 포인트며, Maxout 을 적용하면 신경망의 깊이를 줄일 수 있다는 장점 때문에 Maxout 에 의한 파라미터 증가를 어느정도 상쇄할 수 있다.
-
-![스크린샷 2022-07-13 오전 11.29.48.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d638816d-1416-4365-b950-04cd2ff8a9f6/스크린샷_2022-07-13_오전_11.29.48.png)
+    ![Maxout](/images/Machine_Learning/activation_function/12.png) 
 
 - **Softmax**
     - 수식
         
         $$
-y_k = { e^{a_k} \over \sum_{i=1}^{n} {e^{a_i}} }  
-$$
+        y_k = { e^{a_k} \over {\sum_{i=1}^{n} {e^{a_i}}} }  
+        $$
         
         - k = 계산하고자하는 클래스, n = 전체 클래스 수
         - 단순하게 “k일 확률 / 전체 확률”
