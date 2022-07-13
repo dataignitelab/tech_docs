@@ -26,15 +26,15 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 ![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
 
-### 활성화 함수 종류
+# 활성화 함수 종류
 
-- **Step**
+### **Step**
     - 0 또는 1만 출력 하는 활성화 함수로 최초의 활성화 함수이다.
     - 너무 단순해서 간단한 문제 외에는 적용하기 어려우며, 미분을 이용한 딥러닝 학습에 적용할 수 없다.
 
     ![step](/images/Machine_Learning/activation_function/3.png)
 
-- **Sigmoid**
+### **Sigmoid**
     - 0-1 사이로 만들어주는 딥러닝에서의 전통적인 활성화 함수로 데이터 평균을 0.5로 만들어준다. Nomailzation 역할을 수행한다고 보면 되겠다.
 
     ![Sigmoid](/images/Machine_Learning/activation_function/4.png)
@@ -54,7 +54,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 출력이 1 이하의 실수이기 때문에 다중 레이어에서 반복적으로 사용 시 기울기 소실(Vanising Gradient) 문제를 발생시켜서 학습이 되지 않는 문제가 있다.
     - 그래프를 보면 알겠지만 0과 1로 데이터의 차이를 크게 만들어주는 역할을 수행하기 때문에 Binrary Classfication 문제에서 모델의 마지막 출력에만 적용되는 함수로 많이 활용된다.
 
-- **tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
+### **tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
     - Sigmoid와 거의 같으며 -1 ~ +1 사이로 만들어주는 활성화 함수로 데이터 평균을 0으로 만들어 준다.
 
     ![tanh](/images/Machine_Learning/activation_function/5.png)
@@ -66,7 +66,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
     ![활성화함수에 따른 성능 차이 예시](/images/Machine_Learning/activation_function/6.png) 
 
-- **ReLU (Retified Linear Unit)**
+### **ReLU (Retified Linear Unit)**
     - 음수는 0, 양수는 양수 그대로 출력하는 함수
 
     ![ReLU](/images/Machine_Learning/activation_function/7.png) 
@@ -79,7 +79,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
             - ReLU를 ANN에 적용하여 딥러닝의 가능성을 보여준 딥러닝 모델이다.
             - 현재의 딥러닝 기술이 지금처럼 발전할 수 있도록 다양한 핵심 개념들(ReLU, Dropout, Auggmentation, Pooling, Nomailzation)을 정립하였다.
             
-- **ELU (Exponential Linear Unit)**
+### **ELU (Exponential Linear Unit)**
     - 음수일때 비선형적인 형태를 띔
 
     ![ELU](/images/Machine_Learning/activation_function/8.png) 
@@ -87,7 +87,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - ReLU에서의 0 발생 시 학습이 되지 않는 Dying ReLU 문제가 발생하는 것을 해결하고자 나온 것으로 어느정도의 음수는 활용하자가 기본 개념이다. 이후 설명될 ReLU 의 모든 변형 함수들의 목적이다.
         - ReLu는 음수를 활용하지 않기 때문에 모델의 기울기 최저점에서 수렴하지 못하고 Loss가 요동치는 문제가 있는데, 음수를 활용하면 모델 수렴이 보다 잘 될 가능성이 있다.
     
-- **Leaky** **Relu**
+### **Leaky** **Relu**
     - 음수에는 0.01 을 곱하여 사용, 양수는 그대로 출력하는 함수
 
     ![Leaky Relu](/images/Machine_Learning/activation_function/9.png) 
@@ -95,13 +95,13 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - ELU와 개발목적은 같다.
     - 다만, Relu의 미분 연산에서는 계산할것이 따로 없는데, Leaky Relu는 연산량이 늘어나면서 학습 시간이 더 많이 소요된다.
     
-- **Swish**
+### **Swish**
     - ReLu 의 변형으로 작은 음수의 입력은 활용하는 함수이다.
     - f(x) = x * sigmoid(x)
 
     ![Swish](/images/Machine_Learning/activation_function/10.png) 
 
-- **EXP (Exponential)**
+### **EXP (Exponential)**
     - 자연로그의 지수함수이다. 활성화 함수의 범주에 넣기에는 애매한 측면이 있으나 빈도는 높지 않지만 주요 포인트들에서 활용되고 있으니 적어본다.
     - 데이터 아주 작은 차이도 명확하게 구별 될 수 있는 큰 차이로 만들어주는 것이 특징이다.
     - 회귀분석에서 모델 출력 값이 양수의 큰값이어야 할 때 활용될 수 있을 것으로 판단된다.
@@ -109,7 +109,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
     ![EXP](/images/Machine_Learning/activation_function/11.png) 
 
-- **Maxout**
+### **Maxout**
     - 활성화 함수를 구간 선형 함수(piecewise linear function)이라 가정하고, 뉴런 별 최적의 활성화 함수를 학습을 통하여 찾아내는 활성화 함수이다.
 
     ![Maxout](/images/Machine_Learning/activation_function/12.png) 
@@ -117,7 +117,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 뉴런 별로 여러개의 선형 함수를 학습 시키도 최종적으로 최댓값들을 취하는 방식이다. 아래 그래프로는 빨간선이 되겠다.
     - Maxout 도 결국 학습해야하므로 연산 파라미터가 증가하기 때문에 얼마만큼 활용할 것인가는 고민해봐야할 포인트며, Maxout 을 적용하면 신경망의 깊이를 줄일 수 있다는 장점 때문에 Maxout 에 의한 파라미터 증가를 어느정도 상쇄할 수 있다.
 
-- **Softmax**
+### **Softmax**
     - 수식
         ![softmax](https://blog.kakaocdn.net/dn/7o3ns/btqvQDIyhq4/FYgVfbO6NaJrkc7y11f440/img.png)
         - k = 계산하고자하는 클래스, n = 전체 클래스 수
@@ -125,7 +125,7 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
     - 데이터의 합이 1인 확률 분포로 변환해주는 활성화 함수이다.
     - 3개 이상의 다중 분류문제에서 모델의 마지막 레이어의 출력 값에 적용하는 활성화 함수로 많이 활용된다.
 
-### 참고자료
+# 참고자료
 
 - 활성화 함수를 사용하는 이유에 대한 개념적 이해 : [https://www.inflearn.com/questions/486022](https://www.inflearn.com/questions/486022)
 - Sigmoid, 자연상수e와 딥러닝과의 관계 : [https://www.facebook.com/groups/TensorFlowKR/posts/438895809784816/](https://www.facebook.com/groups/TensorFlowKR/posts/438895809784816/)
