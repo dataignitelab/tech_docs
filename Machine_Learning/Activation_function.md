@@ -1,6 +1,6 @@
 # 활성화 함수 (Activation Function)
 
-ANN(Arificial Neural Network)에서 레이어 출력 값을 보정하기 위해서 사용하는 함수로서 목적에 따라 다양한 활성화 함수가 사용된다.
+ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위해서 사용하는 함수로서 목적에 따라 다양한 활성화 함수가 사용된다.
 
 ### 사용하는 이유?
 
