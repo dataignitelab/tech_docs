@@ -21,6 +21,8 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 그에 대한 해결책이 바로 활성화 함수이다. 선형적인 ANN 레이어에 비선형성을 추가하는 것이다. 
 
+![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
+
 활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다.
 
 ![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
