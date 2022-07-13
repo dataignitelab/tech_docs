@@ -35,7 +35,9 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 - **Sigmoid**
     - 0-1 사이로 만들어주는 딥러닝에서의 전통적인 활성화 함수로 데이터 평균을 0.5로 만들어준다. Nomailzation 역할을 수행한다고 보면 되겠다.
-    ![Sigmoid](/images/Machine_Learning/activation_function/3.png)
+
+![Sigmoid](/images/Machine_Learning/activation_function/3.png)
+
     - **통계적 관점에서 Sigmoid**
         - Sigmoid 는 단순 0-1 사이의 숫자가 아니라 확률 값이다.
         - logistics 와 그리고 odds 와 probability 개념 이해
@@ -53,7 +55,9 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 - **tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
     - Sigmoid와 거의 같으며 -1 ~ +1 사이로 만들어주는 활성화 함수로 데이터 평균을 0으로 만들어 준다.
-    ![tanh](/images/Machine_Learning/activation_function/4.png)
+
+![tanh](/images/Machine_Learning/activation_function/4.png)
+
     - RNN 모델에서 주로 활용되는 함수이다. 이전 과거의 데이터를 현재 데이터에 반영해야 하므로 순환 연산을 수행하다보면 같은 값을 계속 곱하게 되는데,  0 ~ 1 사이의 값(sigmoid)이라면 기울기가 소실될 것이며, 1 보다 크다면 (ReLU) 기울기가 발산하게 되므로 적합하지 않다.
         - 그래서 적당한 타협점을 찾은 것이 tanh 이다.
         - Sigmoid 의 미분 최대값이 0.25이고, tanh 는 1이다. tanh 가 기울기가 소실될 가능성이 더 적다.
@@ -63,7 +67,9 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
 
 - **ReLU (Retified Linear Unit)**
     - 음수는 0, 양수는 양수 그대로 출력하는 함수
-    ![ReLU](/images/Machine_Learning/activation_function/6.png) 
+
+![ReLU](/images/Machine_Learning/activation_function/6.png) 
+
     - 초창기 ANN에서는 값의 Normalization 과 비선형성을 중시하여 Sigmoid 함수와 같은 것을 활용한 연구가 진행되다보니 Vanishing Gradient 문제를 해결하지 못하여 연구가 진행되지 못했다.
     - ReLu 자체는 이미 오래전에 등장한 개념이었지만 실제 ANN에 적용하는 것은 그로부터 한참 뒤에 진행되었다. 선형 함수라고도 할수 있는 간단한 구조로 Vanising Gradient Problem을 해결하면서 적은 연산으로 깊은 레이어를 쌓으면서 안정적인 학습이 가능해짐에 따라 딥러닝이 발전하는 핵심적인 역할한 활성화 함수이다.
     - 여기서 입력값이 음수가 된다는 것은 Relu에 의해 값이 0 된다는 것인데, 이 때 해당 값이 필요 없다는 의미보다 딥러닝 모델의 필요에 의해서 해당 값들은 0의 방향으로 학습한다는 관점 봐야한다.
@@ -74,34 +80,43 @@ ANN(Arificial Neural Network)의 각 레이어 출력에 활성화 함수를 적
             
 - **ELU (Exponential Linear Unit)**
     - 음수일때 비선형적인 형태를 띔
-    ![ELU](/images/Machine_Learning/activation_function/7.png) 
+
+![ELU](/images/Machine_Learning/activation_function/7.png) 
+
     - ReLU에서의 0 발생 시 학습이 되지 않는 Dying ReLU 문제가 발생하는 것을 해결하고자 나온 것으로 어느정도의 음수는 활용하자가 기본 개념이다. 이후 설명될 ReLU 의 모든 변형 함수들의 목적이다.
         - ReLu는 음수를 활용하지 않기 때문에 모델의 기울기 최저점에서 수렴하지 못하고 Loss가 요동치는 문제가 있는데, 음수를 활용하면 모델 수렴이 보다 잘 될 가능성이 있다.
     
 - **Leaky** **Relu**
     - 음수에는 0.01 을 곱하여 사용, 양수는 그대로 출력하는 함수
-    ![Leaky Relu](/images/Machine_Learning/activation_function/8.png) 
+
+![Leaky Relu](/images/Machine_Learning/activation_function/8.png) 
+
     - ELU와 개발목적은 같다.
     - 다만, Relu의 미분 연산에서는 계산할것이 따로 없는데, Leaky Relu는 연산량이 늘어나면서 학습 시간이 더 많이 소요된다.
     
 - **Swish**
     - ReLu 의 변형으로 작은 음수의 입력은 활용하는 함수이다.
     - f(x) = x * sigmoid(x)
-    ![Swish](/images/Machine_Learning/activation_function/9.png) 
+
+![Swish](/images/Machine_Learning/activation_function/9.png) 
 
 - **EXP (Exponential)**
     - 자연로그의 지수함수이다. 활성화 함수의 범주에 넣기에는 애매한 측면이 있으나 빈도는 높지 않지만 주요 포인트들에서 활용되고 있으니 적어본다.
     - 데이터 아주 작은 차이도 명확하게 구별 될 수 있는 큰 차이로 만들어주는 것이 특징이다.
     - 회귀분석에서 모델 출력 값이 양수의 큰값이어야 할 때 활용될 수 있을 것으로 판단된다.
         - Yolo 같은 모델에서 오브젝트의 w,h 를 찾는데 활용된다.
-    ![EXP](/images/Machine_Learning/activation_function/10.png) 
+
+![EXP](/images/Machine_Learning/activation_function/10.png) 
 
 - **Maxout**
     - 활성화 함수를 구간 선형 함수(piecewise linear function)이라 가정하고, 뉴런 별 최적의 활성화 함수를 학습을 통하여 찾아내는 활성화 함수이다.
-    ![Maxout](/images/Machine_Learning/activation_function/11.png) 
+
+![Maxout](/images/Machine_Learning/activation_function/11.png) 
+ 
     - 뉴런 별로 여러개의 선형 함수를 학습 시키도 최종적으로 최댓값들을 취하는 방식이다. 아래 그래프로는 빨간선이 되겠다.
     - Maxout 도 결국 학습해야하므로 연산 파라미터가 증가하기 때문에 얼마만큼 활용할 것인가는 고민해봐야할 포인트며, Maxout 을 적용하면 신경망의 깊이를 줄일 수 있다는 장점 때문에 Maxout 에 의한 파라미터 증가를 어느정도 상쇄할 수 있다.
-    ![Maxout](/images/Machine_Learning/activation_function/12.png) 
+
+![Maxout](/images/Machine_Learning/activation_function/12.png) 
 
 - **Softmax**
     - 수식

@@ -13,4 +13,4 @@
 
 
 ## Machine Learning 기술 문서
-* [Activation Function](/tech_docs/blob/main//Machine_Learning/Activation_function.md)
+* [Activation Function](Machine_Learning/Activation_function.md)
