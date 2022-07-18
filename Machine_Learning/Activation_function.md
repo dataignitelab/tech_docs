@@ -65,9 +65,6 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 - RNN 모델에서 주로 활용되는 함수이다. 이전 과거의 데이터를 현재 데이터에 반영해야 하므로 순환 연산을 수행하다보면 같은 값을 계속 곱하게 되는데,  0 ~ 1 사이의 값(sigmoid)이라면 기울기가 소실될 것이며, 1 보다 크다면 (ReLU) 기울기가 발산하게 되므로 적합하지 않다.
     - 그래서 적당한 타협점을 찾은 것이 tanh 이다.
     - Sigmoid 의 미분 최대값이 0.25이고, tanh 는 1이다. tanh 가 기울기가 소실될 가능성이 더 적다.
-    - 이에 연장선상에서 모델의 레이어를 깊게 쌓지 않는다면 sigmoid 또는 tanh 가 이후 후술할 ReLU 보다 좋은 성능을 낼 수 있다는 이야기도 된다.
-
-![활성화함수에 따른 성능 차이 예시](/images/Machine_Learning/activation_function/6.png) 
 
 ### **4. ReLU (Retified Linear Unit)**
 
@@ -81,6 +78,11 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
     - **AlexNet**
         - ReLU를 ANN에 적용하여 딥러닝의 가능성을 보여준 딥러닝 모델이다.
         - 현재의 딥러닝 기술이 지금처럼 발전할 수 있도록 다양한 핵심 개념들(ReLU, Dropout, Auggmentation, Pooling, Nomailzation)을 정립하였다.
+- 하지만 ReLu도 만능은 아니다. RNN 기반 모델에서 활성화 함수만 변경 했을때의 학습 결과이다. ReLu 에서 학습이 제대로 되지 않은 것을 볼 수 있다.
+  - RNN 과 같이 같은 노드를 반복해서 계산이 일어나는 순환적 구조에서는 Sigmoid, tanh 가 더 좋은 성능을 보인다.
+  - 즉, 모델의 레이어를 깊게 쌓지 않는다면 sigmoid 또는 tanh 가 이후 후술할 ReLU 보다 좋은 성능을 낼 수도 있다는 이야기이다.
+
+![활성화함수에 따른 성능 차이 예시](/images/Machine_Learning/activation_function/6.png) 
             
 ### **5. ELU (Exponential Linear Unit)**
 
