@@ -8,7 +8,7 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 
 - 선형성(Linearity) : x와 y 의 관계가 고정된 비율에 따라 `비례 또는 반비례` 하는 성질
     - 그래프로 표현하면 직선의 형태를 띔
-    - y = wx+b
+    - $y = wx+b$
 
 ![선형 그래프](/images/Machine_Learning/activation_function/0.png)
 
