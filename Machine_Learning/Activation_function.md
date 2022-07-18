@@ -17,12 +17,12 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 
 ![비선형 그래프](/images/Machine_Learning/activation_function/1.png)
 
-실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수(y=WX+b) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( f(a+b) = f(a) + f(b) )이기 때문에 비선형적인 문제를 해결할 수 없다. 
+실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수( $y=WX+b$ ) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( $f(a+b) = f(a) + f(b)$ )이기 때문에 비선형적인 문제를 해결할 수 없다. 
 
 ![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
 
 그에 대한 해결책이 바로 활성화 함수이다. 선형적인 ANN 레이어에 비선형성을 추가하는 것이다. 
-활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다. 아래 그림은 뉴런의 구조에 대한 내용으로 뉴런 노드(Cell Body)의 선형식 출력 대해서 activation function을 적용한 결과를 출력으로 내보내는 것을 볼 수 있다.
+활성화함수를 이용하여 선형연산의 연속이 아니라 비선형 연산의 연속으로 전환함으로서 비선형적인 복잡한 문제를 해결할 수 있도록 하는 것이 기본 개념이다. 아래 그림은 뉴런의 구조에 대한 내용으로 뉴런 노드(Cell Body)의 선형식 출력 대해서 $f$ (activation function)를 적용하여 출력으로 내보내는 것을 볼 수 있다.
 
 ![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
 
@@ -103,7 +103,7 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 ![Swish](/images/Machine_Learning/activation_function/10.png) 
 
 - ReLu 의 변형으로 작은 음수의 입력은 활용하는 함수이다.
-- f(x) = x * sigmoid(x)
+- $f(x) = x * sigmoid(x)$
 
 ### **8. EXP (Exponential)**
 
