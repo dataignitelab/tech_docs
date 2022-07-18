@@ -78,7 +78,7 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
     - **AlexNet**
         - ReLU를 ANN에 적용하여 딥러닝의 가능성을 보여준 딥러닝 모델이다.
         - 현재의 딥러닝 기술이 지금처럼 발전할 수 있도록 다양한 핵심 개념들(ReLU, Dropout, Auggmentation, Pooling, Nomailzation)을 정립하였다.
-- 하지만 ReLu도 만능은 아니다. RNN 기반 모델에서 활성화 함수만 변경 했을때의 학습 결과이다. ReLu 에서 학습이 제대로 되지 않은 것을 볼 수 있다.
+- 하지만 ReLu도 만능은 아니다. 아래 그림은 RNN 기반 모델에서 활성화 함수만 변경 했을때의 학습 결과이다. ReLu 에서 학습이 제대로 되지 않은 것을 볼 수 있다.
   - RNN 과 같이 같은 노드를 반복해서 계산이 일어나는 순환적 구조에서는 Sigmoid, tanh 가 더 좋은 성능을 보인다.
   - 즉, 모델의 레이어를 깊게 쌓지 않는다면 sigmoid 또는 tanh 가 이후 후술할 ReLU 보다 좋은 성능을 낼 수도 있다는 이야기이다.
 
