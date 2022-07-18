@@ -17,7 +17,7 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 
 ![비선형 그래프](/images/Machine_Learning/activation_function/1.png)
 
-실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수( $y=WX+b$ ) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( $f(a+b) = f(a) + f(b)$ )이기 때문에 비선형적인 문제를 해결할 수 없다. 
+실제 세상의 여러 문제들은 비선형성을 띄고 있는 것들이 대부분이다. 따라서 ANN 도 비선형 문제를 해결할수 있는 방안이 필요했다. 기본 뉴럴의 계산 로직은 선형함수( $y=WX+b$ ) 이다. 그래서 아무리 hidden layer를 많이 쌓더라도 결국 선형 연산( $f(a+b) = f(a) + f(b)$ )이기 때문에 비선형적인 문제를 해결할 수 없다. 아래 그림처럼 3번째 유형은 직선 하나만으로 분류할 수 없다.
 
 ![선형, 비선형 문제](/images/Machine_Learning/activation_function/2.png)
 
