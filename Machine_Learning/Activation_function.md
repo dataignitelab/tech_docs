@@ -27,17 +27,21 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 ![node](https://cs231n.github.io/assets/nn1/neuron_model.jpeg)
 
 # 활성화 함수 종류
-아래 설명하는 함수들 외에 다양한 활성화 함수들이 연구되고 있는 상황이며, 하나의 함수를 기반으로 발전된 형태가 주류를 이룬다. 한가지 명심해야할 것은 일부 초창기 활성화함수를 제외하고는 성능의 상하 관계가 있는 것이 아니라 용도에 따라 활성화 함수의 역할이 다른 것이니 이를 염두해두고 알맞게 사용하면 되겠다.
+아래 설명하는 함수들 외에 다양한 활성화 함수들이 연구되고 있는 상황이며, 하나의 함수를 기반으로 발전된 형태가 주류를 이룬다. 한가지 명심해야할 것은 일부 초창기 활성화함수를 제외하고는 성능의 상하 관계가 있는 것이 아니라 용도에 따라 활성화 함수의 역할이 다른 것이니 이를 염두해두고 알맞게 사용하면 되겠다.  
 
+</br> 
 
-### **1. Step**
+  
+## **1. Step**
 
 ![step](/images/Machine_Learning/activation_function/3.png)
 
 - 0 또는 1만 출력 하는 활성화 함수로 최초의 활성화 함수이다.
-- 너무 단순해서 간단한 문제 외에는 적용하기 어려우며, 미분을 이용한 딥러닝 학습에 적용할 수 없다.
-
-### **2. Sigmoid**
+- 너무 단순해서 간단한 문제 외에는 적용하기 어려우며, 미분을 이용한 딥러닝 학습에 적용할 수 없다.  
+ 
+</br>
+  
+## **2. Sigmoid**
 
 ![Sigmoid](/images/Machine_Learning/activation_function/4.png)
 
@@ -56,8 +60,10 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
         - 이에 연장선상에서 자연상수와 딥러닝과의 관계를 보자면 미분하기 가장 좋은 것이 자연상수이기 때문에 딥러닝과 관련된 대부분의 수식에서는 자연상수를 활용한 것들이 주류를 이룬다고 할 수 있다.
 - 출력이 1 이하의 실수이기 때문에 다중 레이어에서 반복적으로 사용 시 기울기 소실(Vanising Gradient) 문제를 발생시켜서 학습이 되지 않는 문제가 있다.
 - 그래프를 보면 알겠지만 0과 1로 데이터의 차이를 크게 만들어주는 역할을 수행하기 때문에 Binrary Classfication 문제에서 모델의 마지막 출력에만 적용되는 함수로 많이 활용된다.
+  
+</br>
 
-### **3. tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
+## **3. tanh (Hyperbolic Tangent, 쌍곡 탄젠트)**
 
 ![tanh](/images/Machine_Learning/activation_function/5.png)
 
@@ -66,7 +72,9 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
     - 그래서 적당한 타협점을 찾은 것이 tanh 이다.
     - Sigmoid 의 미분 최대값이 0.25이고, tanh 는 1이다. tanh 가 기울기가 소실될 가능성이 더 적다.
 
-### **4. ReLU (Retified Linear Unit)**
+</br>
+
+## **4. ReLU (Retified Linear Unit)**
 
 ![ReLU](/images/Machine_Learning/activation_function/7.png) 
 
@@ -84,7 +92,9 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 
 ![활성화함수에 따른 성능 차이 예시](/images/Machine_Learning/activation_function/6.png) 
             
-### **5. ELU (Exponential Linear Unit)**
+</br>
+
+## **5. ELU (Exponential Linear Unit)**
 
 ![ELU](/images/Machine_Learning/activation_function/8.png) 
 
@@ -92,22 +102,28 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 - ReLU에서의 0 발생 시 학습이 되지 않는 Dying ReLU 문제가 발생하는 것을 해결하고자 나온 것으로 어느정도의 음수는 활용하자가 기본 개념이다. 이후 설명될 ReLU 의 모든 변형 함수들의 목적이다.
     - ReLu는 음수를 활용하지 않기 때문에 모델의 기울기 최저점에서 수렴하지 못하고 Loss가 요동치는 문제가 있는데, 음수를 활용하면 모델 수렴이 보다 잘 될 가능성이 있다.
     - 다만, ReLU보다 미분을 포함한 연산량이 늘어나면서 학습 시간이 더 많이 소요된다. 이는 다른 변형 함수들도 마찬가지다.
+
+</br>
     
-### **6. Leaky** **Relu**
+## **6. Leaky** **Relu**
 
 ![Leaky Relu](/images/Machine_Learning/activation_function/9.png) 
 
 - 음수에는 0.01 을 곱하여 사용, 양수는 그대로 출력하는 함수
 - ELU와 개발목적은 같다.
+
+</br>
     
-### **7. Swish**
+## **7. Swish**
 
 ![Swish](/images/Machine_Learning/activation_function/10.png) 
 
 - ReLu 의 변형으로 작은 음수의 입력은 활용하는 함수이다.
 - $f(x) = x * sigmoid(x)$
 
-### **8. EXP (Exponential)**
+</br>
+
+## **8. EXP (Exponential)**
 
 ![EXP](/images/Machine_Learning/activation_function/11.png) 
 
@@ -116,7 +132,9 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 - 회귀분석에서 모델 출력 값이 양수의 큰값이어야 할 때 활용될 수 있을 것으로 판단된다.
     - Yolo 같은 모델에서 오브젝트의 w,h 를 찾는데 활용된다.
 
-### **9. Maxout**
+</br>
+  
+## **9. Maxout**
 
 ![Maxout](/images/Machine_Learning/activation_function/12.png) 
 
@@ -126,8 +144,9 @@ ANN(Arificial Neural Network)에서 레이어의 출력 값을 보정하기 위�
 
 ![Maxout](/images/Machine_Learning/activation_function/13.png) 
 
+</br>
 
-### **10. Softmax**
+## **10. Softmax**
 
 ![softmax](https://blog.kakaocdn.net/dn/7o3ns/btqvQDIyhq4/FYgVfbO6NaJrkc7y11f440/img.png)
 
