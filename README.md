@@ -8,8 +8,8 @@
 
 ## 클라우드 분야 기술 문서 목차
 
-### [Kubernetes] (https://github.com/dataignitelab/tech_docs/blob/main/cloud/kubernetes/)
-* [리소스 종류] (https://github.com/dataignitelab/tech_docs/blob/main/cloud/kubernetes/Resource.md)
+### [Kubernetes](https://github.com/dataignitelab/tech_docs/blob/main/cloud/kubernetes/)
+* [리소스 종류](https://github.com/dataignitelab/tech_docs/blob/main/cloud/kubernetes/Resource.md)
 
 ### [Ansible](https://github.com/dataignitelab/cloud_docs/blob/main/ansible)
 * [Ansible 개요](https://github.com/dataignitelab/cloud_docs/blob/main/ansible/01_ansible_개요.md)
