@@ -15,7 +15,7 @@
 ### *Deployment*
 
 - RelicaSet 에서 확장된 개념으로 RelicaSet 을 직접 사용하는 것은 권장하지 않는다고 한다. RelicaSet 의 주된 기능인 복제본 생성 기능에 더하여 Pod 의 버전 업데이트 및 롤백 등에 대한 배포 관리 기능이 추가되어있다.
-- 다시 말해서 서비스 운영할일 있으면 RelicaSet 쓰지말고 그냥 Deployment 써라. Pod 한개만 운영하더라도 그냥 Deployment 써라.
+- 다시 말해서 서비스 운영할일 있으면 RelicaSet 쓰지말고 그냥 Deployment 사용하면 되며, Pod 한개만 운영하더라도 그냥 Deployment 쓰면 된다.
 
 ### *DaemonSet*
 
