@@ -1,7 +1,7 @@
 # Tech Docs Project
 DataigniteLab 에서 주로 다루는 기술 영역에 대한 문서들을 관리하는 프로젝트입니다.
 
-Markdown을 기반으로 작성하여 향후 다양한 곳에서 활용될 수 있습니다.
+다양한 곳에서 활용 및 연동될 수 있도로 모든 문서들은 Markdown 또는 PDF로 업로드 됩니다.
 
 
 ## BinData 기술
