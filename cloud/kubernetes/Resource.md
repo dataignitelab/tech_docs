@@ -90,7 +90,7 @@
 ### ServiceAccount
 
 - 쿠버네티스 인증 방식은 크게 사용자 인증(ID/PW) 방식과 ServiceAccount 방식이 있다. 사용자 인증방식은 말그대로 사용자가 로그인에서 쿠버네티스를 직접 사용하는 것이다. 하지만 운영하다보면 사용자가 쓰는게 아니라 Pod가 쿠버네티스에 직접 요청해서 사용할일 있지 않을까해서 만들어둔것이 ServiceAccount 다. 접근 및 사용 범위에 따라 다양한 권한설정이 가능하다.
-- 예를 들자면 StorageClass 에서의 Provisioner를 언급할 때 Pod인 Provisioner가 PersistentVolume를 생성한다고 했다. 여기서 Provisioner가 쿠버네티스에게 명령을 내리기 위한 ServiceAccount 를 할당 받게 된다.
+- 예를 들자면 StorageClass 에서의 Provisioner를 언급할 때 Pod인 Provisioner가 PersistentVolume를 생성한다고 했다. 여기서 Provisioner가 쿠버네티스에게 PV 관련 명령을 내리기 위한 ServiceAccount를 할당 받게 된다.
 
 # 마무리
 
